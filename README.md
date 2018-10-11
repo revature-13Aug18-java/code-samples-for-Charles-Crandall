@@ -7,15 +7,15 @@ Project 0
 Project 1
 - First full stack application
 - Low level technologies
-+-- JDBC
-+-- AJAX
-+-- JavaScript
+-- JDBC
+-- AJAX
+-- JavaScript
 
 Project 2
 
 - Group collaboration
 - High level abstraction
-+-- Angular 6
-+-- Spring MVC
-+-- Hibernate
-+-- Spring Boot
+-- Angular 6
+-- Spring MVC
+-- Hibernate
+-- Spring Boot
