@@ -20,3 +20,6 @@ These files are what I have had a hand in from the four projects assigned to our
   - Spring Boot
 
 [Project 3](https://github.com/revaturelabs/rideshare-client)
+- Real work environment
+- Used legacy code
+- Designed code with maintenance in mind
