@@ -58,7 +58,7 @@ export class AccountinfoComponent implements OnInit {
    */
   userObject: User;
   /**
-   * Represents whether the user is a rider, driver, trainor, or admin
+   * Represents whether the user is a rider, driver, trainer, or admin
    */
   roleObject: Role;
   /**
@@ -137,7 +137,9 @@ export class AccountinfoComponent implements OnInit {
   contactItem: string;
   /**batch end date*/
   batchEnd: string;
-
+  timeSelect: number;
+  /**time day starts */
+  dayStart: number;
   /**for drivers*/
   carObject: Car;
   carMake: string;
@@ -265,7 +267,7 @@ export class AccountinfoComponent implements OnInit {
   /**
    * Uploads image to the storage
    */
-  updload() {
+  upload() {
     const file = this.selectedFiles.item(0);
     this.imageSrc = this.uploadService.uploadfile(file);
   }
@@ -299,29 +301,38 @@ export class AccountinfoComponent implements OnInit {
   /** Creats a user from all the required fields */
   createUserObject() {
 
-    this.updload();
+    //this.upload();
 
     this.userObject = {
-      id: 0,
+      id: 1,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.username,
+      password: this.password,
       photoUrl: this.imageSrc,
       address: this.address2,
       office: '/offices/' + this.officeObject.id,
       // I really don't understand what this translates to on the back end, but now it is dynamic
       batchEnd: new Date(this.batchEnd).toISOString(),
+      startTime: this.timeSelect,
       cars: [],
-      active: true,
+      active: 'ACTIVE',
       contactInfo: [],
-      role: this.roleObject
-
+      role: this.roleObject,
+      bio: this.bio
     };
-
+    console.log(this.userObject);
     // get id from user after post and associate with a car object
     // this.carObject.id = owner from post
-    this.userService.createUser(this.userObject, this.password, this.token)
-      .subscribe(() => {
+    this.userService.createUser(this.userObject, this.password, this.token.substring(28))
+      .then((x) => {
+        sessionStorage.setItem("id", x.id.toString());
+        sessionStorage.setItem("firstName", x.firstName);
+        sessionStorage.setItem("lastName", x.lastName);
+        sessionStorage.setItem("userEmail", x.email);
+        sessionStorage.setItem("userPassword", x.password);
+        sessionStorage.setItem("address", x.address);
+        sessionStorage.setItem("role", x.role);
         this.router.navigate(['/map']);
       });
 
@@ -388,5 +399,9 @@ export class AccountinfoComponent implements OnInit {
     /** Moves Registration to the Car Tab */
   reviewPrevious() {
     this.tabset.select('3');
+  }
+
+  test() {
+    console.log(this.timeSelect);
   }
 }
