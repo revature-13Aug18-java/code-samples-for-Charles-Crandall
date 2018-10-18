@@ -10,4 +10,3 @@ Future plans: work refactor userService to communicate with the Auth0 API for pr
 - Jasmine and Karma for testing
 - Compodoc for documentation generation
 - Google Maps API
-- 
