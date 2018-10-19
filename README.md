@@ -1,11 +1,11 @@
 # Charles Crandall
 These files are what I have had a hand in from the four projects assigned to our batch. 
 
-[Project 0](https://github.com/11crandall/RevatureRepo/tree/master/p0-Charles-Crandall)
+Project 0
 A small banking app that handles users, multiple accounts per user, and transactions between accounts.
 - Basic example of Java
 
-[Project 1](https://github.com/11crandall/RevatureRepo/tree/master/Project1)
+Project 1
 A simplistic full stack program that allows employees to make requests and managers to make, approve, and deny requests, as well as validate a new manager.
 - First full stack application
 - Low level technologies
@@ -13,7 +13,7 @@ A simplistic full stack program that allows employees to make requests and manag
   - AJAX
   - JavaScript
 
-[Project 2](https://github.com/11crandall/RevatureRepo/tree/master/Project2)
+Project 2
 A full stack application that utilizes external APIs fo provide healthcare advise to the user, and allows them view their previous searches, and possible results and recommendations.
 - Group collaboration
 - High level abstraction
@@ -22,7 +22,7 @@ A full stack application that utilizes external APIs fo provide healthcare advis
   - Hibernate
   - Spring Boot
 
-[Project 3](https://github.com/revaturelabs/rideshare-client)
+Project 3
 Cloud based application that facilitates communication between associates of Revature to find reliable transportation, even outside their batch/apartment.
 - Real work environment
 - Used legacy code
